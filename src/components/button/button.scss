@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+button {
+  display: inline-block;
+  background: inherit;
+  font-size: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button {
+  padding: 15px 60px;
+  border-radius: 50px;
+  color: $greyish-white;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &--purple {
+    background-color: $primaryColor;
+  }
+
+  &--border-purple {
+    border: 3px solid $primaryColor;
+  }
+}

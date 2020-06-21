@@ -1,0 +1,11 @@
+@import "../../variables.scss";
+
+.postsContainer {
+  background-color: $primaryColor;
+  width: 100%;
+  margin-top: -50px;
+  position: relative;
+  z-index: -1;
+  padding: 100px 160px;
+  box-sizing: border-box;
+}
