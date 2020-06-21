@@ -1,10 +1,16 @@
 @import "../../variables.scss";
 
 .post {
-  background-color: $white;
-  padding: 40px;
   color: $black;
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  &__card {
+    background-color: $white;
+    padding: 40px;
+    width: 900px;
+  }
 
   &__pseudonym {
     font-size: 25px;
@@ -14,7 +20,7 @@
 
   &__content {
     font-size: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 40px;
   }
 
   &__button {
