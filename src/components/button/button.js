@@ -1,20 +1,30 @@
 import React from "react";
 import "./button.scss";
 
-const Button = ({ text = "", bgColor = "", borderColor = "" }) => {
-  let className = "button";
+const Button = ({
+  text = "",
+  bgColor = "",
+  borderColor = "",
+  fontColor = ""
+}) => {
+  let buttonClass = "button";
+  let buttonTextClass = "button__text";
 
   if (bgColor === "purple") {
-    className += " button--purple";
+    buttonClass += " button--purple";
   }
 
   if (borderColor === "purple") {
-    className += " button--border-purple";
+    buttonClass += " button--border-purple";
+  }
+
+  if (fontColor === "purple") {
+    buttonTextClass += " button__text--purple";
   }
 
   return (
-    <button className={className}>
-      <div className="button__text">{text}</div>
+    <button className={buttonClass}>
+      <div className={buttonTextClass}>{text}</div>
     </button>
   );
 };

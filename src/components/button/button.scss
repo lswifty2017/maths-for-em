@@ -9,12 +9,19 @@ button {
 }
 
 .button {
-  padding: 15px 60px;
+  padding: 10px 70px;
   border-radius: 50px;
-  color: $greyish-white;
 
   &:hover {
     opacity: 0.5;
+  }
+
+  &__text {
+    color: $greyish-white;
+
+    &--purple {
+      color: $primaryColor;
+    }
   }
 
   &--purple {

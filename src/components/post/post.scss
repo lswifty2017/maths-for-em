@@ -3,7 +3,24 @@
 .post {
   background-color: $white;
   padding: 40px;
+  color: $black;
+  margin-bottom: 50px;
 
-  .post__pseudonym {
+  &__pseudonym {
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 30px;
+  }
+
+  &__content {
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
