@@ -1,6 +1,8 @@
 .thread {
+  overflow: hidden;
+
   .post:not(:first-child) {
     width: 90%;
-    // float: right;
+    float: right;
   }
 }

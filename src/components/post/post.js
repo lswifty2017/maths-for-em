@@ -13,25 +13,27 @@ const Post = ({ id, pseudonym = "", content = "", votes = 0, postsState }) => {
 
   return (
     <div className="post">
-      <div className="post__votes">
-        <Votes votes={votes} />
-      </div>
-      <div className="post__card">
-        <div className="post__pseudonym">{pseudonym}</div>
-        <div className="post__content">{content}</div>
-        <div className="post__button">
-          <Button
-            text="Reply"
-            borderColor="purple"
-            fontColor="purple"
-            onClick={toggleModal}
-          />
-          <ModalForm
-            replyId={id}
-            isOpen={isOpen}
-            toggleFn={toggleModal}
-            postsState={postsState}
-          ></ModalForm>
+      <div className="post__wrapper">
+        <div className="post__votes">
+          <Votes votes={votes} />
+        </div>
+        <div className="post__card">
+          <div className="post__pseudonym">{pseudonym}</div>
+          <div className="post__content">{content}</div>
+          <div className="post__button">
+            <Button
+              text="Reply"
+              borderColor="purple"
+              fontColor="purple"
+              onClick={toggleModal}
+            />
+            <ModalForm
+              replyId={id}
+              isOpen={isOpen}
+              toggleFn={toggleModal}
+              postsState={postsState}
+            ></ModalForm>
+          </div>
         </div>
       </div>
     </div>
