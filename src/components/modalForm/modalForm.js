@@ -27,7 +27,6 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {}, replyId }) => {
           replyId: replyId
         }
       ]);
-      debugger;
     } else {
       setPosts([
         ...posts,

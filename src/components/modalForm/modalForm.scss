@@ -20,22 +20,24 @@
   textarea {
     margin-bottom: 30px;
     border-radius: 50px;
-    border: 3px solid #7510f7;
+    border: 3px solid $primaryColor;
     width: 650px;
     height: 236px;
     resize: none;
     padding: 30px;
     font: inherit;
+    background-color: inherit;
 
     &:focus {
       outline: none;
-      border: 3px dotted #7510f7;
+      background-color: $white;
     }
   }
 
   input[type="text"] {
     border-radius: 50px;
-    border: 3px solid #7510f7;
+    border: 3px solid $primaryColor;
+    background-color: inherit;
     width: 650px;
     margin-bottom: 40px;
     padding: 15px 30px;
@@ -43,7 +45,7 @@
 
     &:focus {
       outline: none;
-      border: 3px dotted #7510f7;
+      background-color: $white;
     }
   }
 
