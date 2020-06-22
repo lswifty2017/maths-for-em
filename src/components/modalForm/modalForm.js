@@ -83,6 +83,7 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
               placeholder="Write your post..."
               value={content || ""}
               onChange={handleContentChange}
+              required
             ></textarea>
           </label>
           <label>
@@ -91,6 +92,7 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
               placeholder="Enter your pseudonym"
               value={pseudonym || ""}
               onChange={handlePseudonymChange}
+              required
             />
           </label>
           <div className="modalForm__button">
@@ -102,6 +104,7 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
                 event.preventDefault();
                 postContent(postsState);
               }}
+              disabled={!content.length || !pseudonym.length}
             ></Button>
           </div>
         </form>

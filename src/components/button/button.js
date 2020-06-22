@@ -6,6 +6,7 @@ const Button = ({
   bgColor = "",
   borderColor = "",
   fontColor = "",
+  disabled = false,
   onClick
 }) => {
   let buttonClass = "button";
@@ -24,7 +25,7 @@ const Button = ({
   }
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} onClick={onClick} disabled={disabled}>
       <div className={buttonTextClass}>{text}</div>
     </button>
   );
