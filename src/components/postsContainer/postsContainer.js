@@ -2,19 +2,20 @@ import React from "react";
 import Post from "../post/post";
 import "./postsContainer.scss";
 
-const PostsContainer = () => {
+const PostsContainer = ({ postsState }) => {
   return (
     <div className="postsContainer">
-      <Post
-        pseudonym="Pythagoras"
-        content="TIL, a^2+b^2=c^2. If only I had an easy way to type that equation online!"
-        votes={11}
-      />
-      <Post
-        pseudonym="Pythagoras"
-        content="TIL, a^2+b^2=c^2. If only I had an easy way to type that equation online!"
-        votes={-444}
-      />
+      {postsState.posts.map(({ id, pseudonym, content, votes }) => {
+        return (
+          <Post
+            key={id}
+            id={id}
+            pseudonym={pseudonym}
+            content={content}
+            votes={votes}
+          />
+        );
+      })}
     </div>
   );
 };

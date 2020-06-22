@@ -3,7 +3,7 @@ import Button from "../button/button";
 import ModalForm from "../modalForm/modalForm";
 import "./header.scss";
 
-const Header = () => {
+const Header = ({ postsState }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -15,7 +15,11 @@ const Header = () => {
       <div className="header__title">Maths For ‘em</div>
       <div className="header__button">
         <Button text="New Post" borderColor="purple" onClick={toggleModal} />
-        <ModalForm isOpen={isOpen} toggleFn={toggleModal}></ModalForm>
+        <ModalForm
+          isOpen={isOpen}
+          toggleFn={toggleModal}
+          postsState={postsState}
+        ></ModalForm>
       </div>
     </div>
   );

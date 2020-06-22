@@ -3,10 +3,9 @@ import Modal from "react-modal";
 import Button from "../button/button";
 import "./modalForm.scss";
 
-const ModalForm = ({ isOpen = false, toggleFn }) => {
+const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
   const [content, setContentState] = useState("");
   const [pseudonym, setPseudonymState] = useState("");
-  const [votes, setVotesState] = useState(0);
 
   const handleContentChange = event => {
     setContentState(event.target.value);
@@ -14,6 +13,22 @@ const ModalForm = ({ isOpen = false, toggleFn }) => {
 
   const handlePseudonymChange = event => {
     setPseudonymState(event.target.value);
+  };
+
+  const postContent = ({ setPosts, posts, id, setId }) => {
+    setPosts([
+      ...posts,
+      {
+        id,
+        content,
+        pseudonym,
+        votes: 0
+      }
+    ]);
+    setId((id += 1));
+    setContentState("");
+    setPseudonymState("");
+    toggleFn();
   };
 
   const customStyles = {
@@ -83,7 +98,10 @@ const ModalForm = ({ isOpen = false, toggleFn }) => {
               text="Post"
               bgColor="purple"
               borderColor="purple"
-              onClick={() => alert(`${content} by ${pseudonym}`)}
+              onClick={event => {
+                event.preventDefault();
+                postContent(postsState);
+              }}
             ></Button>
           </div>
         </form>
