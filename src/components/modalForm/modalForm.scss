@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.modalForm {
+  form {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    margin-bottom: 30px;
+    border-radius: 50px;
+    border: 3px solid #7510f7;
+    width: 650px;
+    height: 236px;
+    resize: none;
+    padding: 30px;
+    font: inherit;
+
+    &:focus {
+      outline: none;
+      border: 3px dotted #7510f7;
+    }
+  }
+
+  input[type="text"] {
+    border-radius: 50px;
+    border: 3px solid #7510f7;
+    width: 650px;
+    margin-bottom: 40px;
+    padding: 15px 30px;
+    font: inherit;
+
+    &:focus {
+      outline: none;
+      border: 3px dotted #7510f7;
+    }
+  }
+
+  &__button {
+    width: 300px;
+    font-size: 25px;
+  }
+}

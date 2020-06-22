@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Votes = ({ votes }) => {
-  let [upVoteClass, setUpVoteClass] = useState("votes__vote");
-  let [downVoteClass, setDownVoteClass] = useState("votes__vote");
-  let [upVotedStatus, setUpVotedStatus] = useState(false);
-  let [downVotedStatus, setDownVotedStatus] = useState(false);
-  let [count, setCount] = useState(votes);
+  const [upVoteClass, setUpVoteClass] = useState("votes__vote");
+  const [downVoteClass, setDownVoteClass] = useState("votes__vote");
+  const [upVotedStatus, setUpVotedStatus] = useState(false);
+  const [downVotedStatus, setDownVotedStatus] = useState(false);
+  const [count, setCount] = useState(votes);
 
   const upVote = () => {
     if (!upVotedStatus) {

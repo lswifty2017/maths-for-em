@@ -13,7 +13,14 @@ const Post = ({ pseudonym = "", content = "", votes = 0 }) => {
         <div className="post__pseudonym">{pseudonym}</div>
         <div className="post__content">{content}</div>
         <div className="post__button">
-          <Button text="Reply" borderColor="purple" fontColor="purple" />
+          <Button
+            text="Reply"
+            borderColor="purple"
+            fontColor="purple"
+            onClick={() => {
+              alert("clicked!");
+            }}
+          />
         </div>
       </div>
     </div>

@@ -5,7 +5,8 @@ const Button = ({
   text = "",
   bgColor = "",
   borderColor = "",
-  fontColor = ""
+  fontColor = "",
+  onClick
 }) => {
   let buttonClass = "button";
   let buttonTextClass = "button__text";
@@ -23,7 +24,7 @@ const Button = ({
   }
 
   return (
-    <button className={buttonClass}>
+    <button className={buttonClass} onClick={onClick}>
       <div className={buttonTextClass}>{text}</div>
     </button>
   );
