@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import Button from "../button/button";
 import "./modalForm.scss";
 
-const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
+const ModalForm = ({ isOpen = false, toggleFn, postsState = {}, replyId }) => {
   const [content, setContentState] = useState("");
   const [pseudonym, setPseudonymState] = useState("");
 
@@ -16,15 +16,30 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
   };
 
   const postContent = ({ setPosts, posts, id, setId }) => {
-    setPosts([
-      ...posts,
-      {
-        id,
-        content,
-        pseudonym,
-        votes: 0
-      }
-    ]);
+    if (replyId) {
+      setPosts([
+        ...posts,
+        {
+          id,
+          content,
+          pseudonym,
+          votes: 0,
+          replyId: replyId
+        }
+      ]);
+      debugger;
+    } else {
+      setPosts([
+        ...posts,
+        {
+          id,
+          content,
+          pseudonym,
+          votes: 0
+        }
+      ]);
+    }
+
     setId((id += 1));
     setContentState("");
     setPseudonymState("");
@@ -80,7 +95,9 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
         <form>
           <label className="modalForm__content">
             <textarea
-              placeholder="Write your post..."
+              placeholder={
+                replyId ? "Write your reply..." : "Write your post..."
+              }
               value={content || ""}
               onChange={handleContentChange}
               required
@@ -97,7 +114,7 @@ const ModalForm = ({ isOpen = false, toggleFn, postsState = {} }) => {
           </label>
           <div className="modalForm__button">
             <Button
-              text="Post"
+              text={replyId ? "Reply" : "Post"}
               bgColor="purple"
               borderColor="purple"
               onClick={event => {

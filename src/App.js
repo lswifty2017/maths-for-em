@@ -5,14 +5,14 @@ import PostsContainer from "./components/postsContainer/postsContainer";
 
 function App() {
   const testPost = {
-    id: 0,
+    id: 1,
     pseudonym: "Pythagoras",
     content:
       "TIL, a^2+b^2=c^2. If only I had an easy way to type that equation online!",
     votes: 293
   };
 
-  const [posts, setPosts] = useState([testPost]);
+  const [posts, setPosts] = useState([]);
   const [id, setId] = useState(1);
 
   return (

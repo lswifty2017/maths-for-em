@@ -1,0 +1,6 @@
+.thread {
+  .post:not(:first-child) {
+    width: 90%;
+    float: right;
+  }
+}

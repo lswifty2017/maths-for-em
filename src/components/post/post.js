@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./post.scss";
 import Button from "../button/button";
 import Votes from "../votes/votes";
+import ModalForm from "../modalForm/modalForm";
 
-const Post = ({ pseudonym = "", content = "", votes = 0 }) => {
+const Post = ({ id, pseudonym = "", content = "", votes = 0, postsState }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="post">
       <div className="post__votes">
@@ -17,10 +24,14 @@ const Post = ({ pseudonym = "", content = "", votes = 0 }) => {
             text="Reply"
             borderColor="purple"
             fontColor="purple"
-            onClick={() => {
-              alert("clicked!");
-            }}
+            onClick={toggleModal}
           />
+          <ModalForm
+            replyId={id}
+            isOpen={isOpen}
+            toggleFn={toggleModal}
+            postsState={postsState}
+          ></ModalForm>
         </div>
       </div>
     </div>
